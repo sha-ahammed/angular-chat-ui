@@ -18,6 +18,48 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class SidebarComponent implements OnInit, OnDestroy {
   private resizeObserver: ResizeObserver | null = null;
+  initialFileTree = [
+    {
+      name: 'Documents',
+      isFolder: true,
+      children: [
+        {
+          name: 'Work',
+          isFolder: true,
+          children: [
+            {
+              name: 'report.pdf',
+              isFolder: false,
+            },
+            {
+              name: 'presentation.pptx',
+              isFolder: false,
+            },
+          ],
+        },
+        {
+          name: 'Personal',
+          isFolder: true,
+          children: [
+            {
+              name: 'photos',
+              isFolder: true,
+              children: [],
+            },
+            {
+              name: 'budget.xlsx',
+              isFolder: false,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Downloads',
+      isFolder: true,
+      children: [],
+    },
+  ];
 
   /**
    * Constructor for the SidebarComponent.

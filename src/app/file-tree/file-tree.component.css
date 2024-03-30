@@ -1,0 +1,31 @@
+/* file-tree.component.css */
+ul {
+  @apply list-none pl-4;
+}
+
+li {
+  @apply mb-2;
+}
+
+.folder-icon {
+  @apply mr-2 text-blue-500;
+}
+
+.file-icon {
+  @apply mr-2 text-gray-500;
+}
+
+.item-name {
+  @apply font-semibold;
+}
+
+.selected-item {
+  @apply bg-blue-100;
+}
+
+.nav-text {
+  max-width: 150px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

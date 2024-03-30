@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
+import { FileTreeModule } from './file-tree/file-tree.module';
 
 @Component({
   selector: 'app-root',
