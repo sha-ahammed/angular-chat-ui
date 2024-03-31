@@ -1,5 +1,5 @@
 <div
-  class="relative flex h-screen w-[20%] flex-col rounded-xl bg-black bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5 sidebar-container"
+  class="relative flex flex-col bg-black bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5 sidebar-container flex-1 overflow-auto h-full"
 >
   <div class="p-4 mb-2">
     <h5
@@ -9,7 +9,7 @@
     </h5>
   </div>
   <nav
-    class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700"
+    class="flex-grow flex flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700"
   >
     <app-file-tree [fileTree]="initialFileTree"></app-file-tree>
   </nav>

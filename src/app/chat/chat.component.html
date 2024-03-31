@@ -1,0 +1,60 @@
+<div class="flex flex-col h-full bg-gray-900">
+  <!-- Chat messages -->
+  <div class="flex-grow overflow-y-auto p-6 space-y-4">
+    <div class="flex justify-center mb-4">
+      <div
+        class="bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg px-6 py-2 text-xl font-semibold"
+      >
+        Happiness Index is 100!
+      </div>
+    </div>
+    <div *ngFor="let message of messages" class="flex">
+      <img
+        [src]="
+          message.isUserMessage
+            ? 'assets/user-circle-svgrepo-com.svg'
+            : 'assets/robot-svgrepo-com.svg'
+        "
+        alt="Avatar"
+        class="w-8 h-8 rounded-full mr-3"
+      />
+      <div
+        [class]="
+          message.isUserMessage
+            ? 'self-end bg-gray-800 text-white rounded-tl-lg rounded-tr-lg rounded-bl-lg'
+            : 'self-start bg-gray-700 text-gray-200 rounded-tl-lg rounded-tr-lg rounded-br-lg'
+        "
+        class="p-3 rounded-lg inline-block max-w-[80%] text-sm"
+      >
+        {{ message.content }}
+      </div>
+    </div>
+  </div>
+  <!-- Input -->
+  <div class="p-4 flex justify-center items-center">
+    <div class="flex items-stretch w-full max-w-2xl">
+      <input
+        type="text"
+        class="flex-grow bg-gray-700 text-white rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gradient-to-r from-pink-500 to-purple-500"
+        placeholder="Enter a prompt here"
+        [(ngModel)]="userInput"
+        (keyup.enter)="sendMessage()"
+      />
+      <button
+        class="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-r-lg px-4 flex items-center"
+        (click)="sendMessage()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="w-5 h-5 transform rotate-90"
+        >
+          <path
+            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

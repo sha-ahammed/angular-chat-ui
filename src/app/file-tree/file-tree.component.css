@@ -1,11 +1,4 @@
 /* file-tree.component.css */
-ul {
-  @apply list-none pl-4;
-}
-
-li {
-  @apply mb-2;
-}
 
 .folder-icon {
   @apply mr-2 text-blue-500;
